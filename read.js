@@ -2,6 +2,8 @@
 //read
 
 const fs = require("fs");
+//const { WriteStream } = require("tty");
+//const { ReadStream } = require("tty");
 
 /*fs.readFile("./datos.txt", (err, data) => {
     if (err) {
@@ -54,8 +56,8 @@ fs.writeFile("./datos2.txt", "hola mundo otra vez", () => {
 
 // borrar documentos
 
-if (fs.existsSync("./datos2.txt")){
-  fs.unlink("./datos2.txt", (err) => {  
+/* if (fs.existsSync("./datos.txt")){
+  fs.unlink("./datos.txt", (err) => {  
 
     if (err){
         console.log(err);
@@ -63,7 +65,27 @@ if (fs.existsSync("./datos2.txt")){
     }
     console.log("documento eliminado");
 
-})};
+})}; */
+
+
+//acceder datos en bloque
+
+const readStream = fs.createReadStream("./datos.txt", {encoding: "utf8"});
+const writeStream = fs.createWriteStream("./datos3.txt");
+
+
+/* readStream.on("data", (accesoDatos) => {
+    
+    console.log("-----------Bloque------------");
+    console.log(accesoDatos.toString());
+    
+}); */
+ 
+
+readStream.pipe(writeStream);
+
+
+
 
 
 
