@@ -1,10 +1,8 @@
-const personas = ["Luca", "Fran", "Javi", "Miguel"]
+export const personas = ["Luca", "Fran", "Javi", "Miguel"]
 const edades = [34, 25, 28, 19]
-console.log(personas);
+console.log(personas, edades);
 
-module.exports = {
-    personas, edades
-}
+
 
 
 
