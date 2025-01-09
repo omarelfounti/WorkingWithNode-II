@@ -31,7 +31,9 @@ fs.writeFile("./datos2.txt", "hola mundo otra vez", () => {
 
 ); */
 
-if(!fs.existsSync("./carpetaNueva")){
+//crear directorios
+
+/* if(!fs.existsSync("./carpetaNueva")){
     fs.mkdir("./carpetaNueva", (err) => {
         if (err) {
             console.log(err);
@@ -47,8 +49,21 @@ if(!fs.existsSync("./carpetaNueva")){
         }
         console.log("carpeta eliminada");
         
-})};
+})}; */
 
+
+// borrar documentos
+
+if (fs.existsSync("./datos2.txt")){
+  fs.unlink("./datos2.txt", (err) => {  
+
+    if (err){
+        console.log(err);
+        
+    }
+    console.log("documento eliminado");
+
+})};
 
 
 
