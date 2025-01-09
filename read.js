@@ -70,8 +70,8 @@ fs.writeFile("./datos2.txt", "hola mundo otra vez", () => {
 
 //acceder datos en bloque
 
-const readStream = fs.createReadStream("./datos.txt", {encoding: "utf8"});
-const writeStream = fs.createWriteStream("./datos3.txt");
+const readStream = fs.createReadStream("./datos.txt", { encoding: "utf8" });
+const writeStream = fs.createWriteStream("./datos2.txt");
 
 
 /* readStream.on("data", (accesoDatos) => {
@@ -80,7 +80,7 @@ const writeStream = fs.createWriteStream("./datos3.txt");
     console.log(accesoDatos.toString());
     
 }); */
- 
+
 
 readStream.pipe(writeStream);
 
